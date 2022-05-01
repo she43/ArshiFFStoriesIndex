@@ -6,6 +6,7 @@
         const data = await response.json();
         let htmlString = '<ul>';
         for (let file of data) {
+		if(!file.path.contains("index.html"))
           htmlString += `<li><a href="${file.path}/index.html">${file.name}</a></li>`;
         }
         htmlString += '</ul>';
